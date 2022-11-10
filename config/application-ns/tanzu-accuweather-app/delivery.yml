@@ -25,7 +25,7 @@ spec:
         carto.run/workload-name: tanzu-accuweather-app
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-accuweather-app-application-ns@sha256:a0f6c99839457243f8125f597507de68b8491c7a28df1a67f4d833696849862a
+      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-accuweather-app-application-ns@sha256:fe932fa2d23e30731dcc9de9b770932977657e3c463edb9ec346f82a642754d0
         name: workload
         resources: {}
         securityContext:
