@@ -1,0 +1,39 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: tanzu-gitops-weather-app
+  annotations:
+    ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
+    ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+  labels:
+    app.kubernetes.io/part-of: tanzu-gitops-weather-app
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/language: dotnet
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: run
+    carto.run/workload-name: tanzu-gitops-weather-app
+spec:
+  template:
+    metadata:
+      annotations:
+        conventions.carto.run/applied-conventions: |-
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/app-live-view-appflavour-check
+          appliveview-sample/app-live-view-appflavour-check
+        developer.conventions/target-containers: workload
+      labels:
+        app.kubernetes.io/component: run
+        app.kubernetes.io/part-of: tanzu-gitops-weather-app
+        apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/language: dotnet
+        apps.tanzu.vmware.com/workload-type: web
+        carto.run/workload-name: tanzu-gitops-weather-app
+    spec:
+      containers:
+      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-gitops-weather-app-application-ns@sha256:2edc4eee91e0e0df8cb7edbe6bd2c625b29a4841de4108af5598d1f2b9e4bf42
+        name: workload
+        resources: {}
+        securityContext:
+          runAsUser: 1000
+      serviceAccountName: default
+
