@@ -5,9 +5,12 @@ metadata:
   annotations:
     ootb.apps.tanzu.vmware.com/servicebinding-workload: "true"
     ootb.apps.tanzu.vmware.com/apidescriptor-ref: "true"
+    kapp.k14s.io/change-rule: upsert after upserting servicebinding.io/ServiceBindings
   labels:
     app.kubernetes.io/part-of: tanzu-weather-app
     apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/language: dotnet
+    apps.tanzu.vmware.com/pipeline: test
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/component: run
     carto.run/workload-name: tanzu-weather-app
@@ -15,17 +18,22 @@ spec:
   template:
     metadata:
       annotations:
-        conventions.carto.run/applied-conventions: appliveview-sample/app-live-view-appflavour-check
+        conventions.carto.run/applied-conventions: |-
+          spring-boot-convention/auto-configure-actuators-check
+          spring-boot-convention/app-live-view-appflavour-check
+          appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
         app.kubernetes.io/part-of: tanzu-weather-app
         apps.tanzu.vmware.com/has-tests: "true"
+        apps.tanzu.vmware.com/language: dotnet
+        apps.tanzu.vmware.com/pipeline: test
         apps.tanzu.vmware.com/workload-type: web
         carto.run/workload-name: tanzu-weather-app
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-weather-app-application-ns@sha256:25af68b10d6baf30844a91e4c1c8f40bc927ca6563d8afada8e8fa401058e2ef
+      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-weather-app-application-ns@sha256:cbbc236626d91109e1f923e4f6f5432405c7035de259fa7746b1af1076b92acb
         name: workload
         resources: {}
         securityContext:
