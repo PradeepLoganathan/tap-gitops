@@ -29,7 +29,7 @@ spec:
         carto.run/workload-name: sentimentapi
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/sentimentapi-application-ns@sha256:799dac2a0123e30f458c45323de9e79c44aa21be25efe7ae853eae8a333312b8
+      - image: buildservice.azurecr.io/clstrappsrepo/sentimentapi-application-ns@sha256:967daec0b2649242a58a4b49b3cbcb00aa2cf2905d51670a0891680dbf1e3dac
         name: workload
         resources: {}
         securityContext:
