@@ -36,7 +36,7 @@ spec:
         carto.run/workload-name: tanzu-sentimentanalysis-trainer
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-sentimentanalysis-trainer-application-ns@sha256:d937cbd1add125439e669dc99018c4013d11e36a96abe413e6c71cadd7082fd6
+      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-sentimentanalysis-trainer-application-ns@sha256:84e93ffdf5e0ee7c635ade5a4426749af2b771f16dfe09be320d665398f97f6d
         name: workload
         resources: {}
         securityContext:
