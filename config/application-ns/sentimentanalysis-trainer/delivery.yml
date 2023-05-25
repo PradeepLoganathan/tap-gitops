@@ -24,9 +24,9 @@ spec:
     metadata:
       annotations:
         conventions.carto.run/applied-conventions: |-
+          appliveview-sample/app-live-view-appflavour-check
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/app-live-view-appflavour-check
-          appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -36,7 +36,7 @@ spec:
         carto.run/workload-name: sentimentanalysis-trainer
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/sentimentanalysis-trainer-application-ns@sha256:c0059df5145b6b70c933c371e826a99b5044bc771fc20e7e8c3153d19a04cd4c
+      - image: buildservice.azurecr.io/clstrappsrepo/sentimentanalysis-trainer-application-ns@sha256:a78ab157ae325fc0f519f5a924acf6ca958fb53ebed28be42f7673219e35d9ac
         name: workload
         resources: {}
         securityContext:
