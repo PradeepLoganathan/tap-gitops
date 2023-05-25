@@ -17,9 +17,9 @@ spec:
     metadata:
       annotations:
         conventions.carto.run/applied-conventions: |-
+          appliveview-sample/app-live-view-appflavour-check
           spring-boot-convention/auto-configure-actuators-check
           spring-boot-convention/app-live-view-appflavour-check
-          appliveview-sample/app-live-view-appflavour-check
         developer.conventions/target-containers: workload
       labels:
         app.kubernetes.io/component: run
@@ -29,7 +29,7 @@ spec:
         carto.run/workload-name: sentimentapi
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/sentimentapi-application-ns@sha256:c18c97fc326708ff40c7a2030123a5f249f73d0452e75958b9a20bf68720070f
+      - image: buildservice.azurecr.io/clstrappsrepo/sentimentapi-application-ns@sha256:a86f09ff22650fc0178546d2979b0a8c36f2620c805d7eff45dfdaae7f14de52
         name: workload
         resources: {}
         securityContext:
