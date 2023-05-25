@@ -29,7 +29,7 @@ spec:
         carto.run/workload-name: tanzu-dotnet-gitops-app
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-dotnet-gitops-app-application-ns@sha256:97180922e66a9577feff1ea7c5746c42785dd627b461a2115e63da93071396b5
+      - image: buildservice.azurecr.io/clstrappsrepo/tanzu-dotnet-gitops-app-application-ns@sha256:c872fb96b6c17bc018bf0cee2d662dced162ee845bec657e37a49cc191ab3526
         name: workload
         resources: {}
         securityContext:
