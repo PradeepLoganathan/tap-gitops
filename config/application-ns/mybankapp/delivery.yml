@@ -33,7 +33,7 @@ spec:
         carto.run/workload-name: mybankapp
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/mybankapp-application-ns@sha256:475d2ccb512c92b487977d4e388753797b9f4d025e46a3f9a2b16f1764843407
+      - image: buildservice.azurecr.io/clstrappsrepo/mybankapp-application-ns@sha256:e8187e4ea37faa15d1cf6e86ac125dddca11f868149480bcbe17f9d888c14946
         name: workload
         resources: {}
         securityContext:
