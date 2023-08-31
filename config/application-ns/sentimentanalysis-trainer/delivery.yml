@@ -36,7 +36,7 @@ spec:
         carto.run/workload-name: sentimentanalysis-trainer
     spec:
       containers:
-      - image: buildservice.azurecr.io/clstrappsrepo/sentimentanalysis-trainer-application-ns@sha256:d43ce24180624830855f5ac3b583bf0910b9c62851b971bc8fa685445cc0516c
+      - image: buildservice.azurecr.io/clstrappsrepo/sentimentanalysis-trainer-application-ns@sha256:615905cccfdf4574050aef23269b2b547e56b1b4d75ab142f8a8a4bc89dc03e7
         name: workload
         resources: {}
         securityContext:
